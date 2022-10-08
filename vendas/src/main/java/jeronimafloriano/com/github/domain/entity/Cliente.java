@@ -1,5 +1,7 @@
 package jeronimafloriano.com.github.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -15,6 +17,7 @@ public class Cliente {
     @Column(name = "nome", length = 100)
     private String nome;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "cliente") //OneToMany = Um cliente para muitos pedidos / mappedBy = nome do mapeamento(atributo) que está mapeando essa classe lá na classe Pedido
     private List<Pedido> pedidos;
 

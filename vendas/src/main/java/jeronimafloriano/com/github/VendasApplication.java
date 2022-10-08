@@ -25,7 +25,7 @@ public class VendasApplication {
             clienteRepository.save(cliente1);
             clienteRepository.save(cliente2);
 
-            clienteRepository.findAll().forEach(System.out::println);
+            /*clienteRepository.findAll().forEach(System.out::println);
             System.out.println("Procurando por nome com consulta da JPA: " + clienteRepository.findByNomeLike("Maria"));
             System.out.println(clienteRepository.existsByNome("Jeronima"));
 
@@ -39,8 +39,12 @@ public class VendasApplication {
             //pedido.setTotal(new BigDecimal(100));
             pedidosRepository.save(pedido);
 
-            System.out.println("Buscando clientes com fetch: " + clienteRepository.findClienteFetchPedidos(cliente1.getId()));
-            System.out.println(cliente1.getPedidos());
+            Cliente cliente = clienteRepository.findClienteFetchPedidos(cliente1.getId());
+
+            System.out.println("Buscando clientes com fetch: " + cliente);
+            System.out.println(cliente.getPedidos());
+
+            pedidosRepository.findByClienteId(cliente1.getId()).forEach(System.out::println);*/
         };
     }
     public static void main(String[] args) {

@@ -14,8 +14,10 @@ Vsrc/main/java/jeronimafloriano/com/github/domain/repository/ItensPedidoReposito
 ƒ
 Ssrc/main/java/jeronimafloriano/com/github/domain/repository/ProdutosRepository.java,8\4\84024f4116c8c6f0408821f118001587148f8aac
 t
-Dsrc/main/java/jeronimafloriano/com/github/domain/entity/Cliente.java,1\0\10deb07eb72b784e7ca474aca6c62cf770642b0b
+Dsrc/main/java/jeronimafloriano/com/github/domain/entity/Produto.java,0\0\00b36e08cf4b16aa49c6bf93a7e551b6c0bb542e
+‚
+Rsrc/main/java/jeronimafloriano/com/github/domain/repository/ClienteRepository.java,9\4\94b1d8d3247945a0d2162dbd003943ba59a35b8f
+s
+Csrc/main/java/jeronimafloriano/com/github/domain/entity/Pedido.java,2\4\2410e1ae99d64e8240bfb5959bfcec59c1edee24
 ‚
 Rsrc/main/java/jeronimafloriano/com/github/domain/repository/PedidosRepository.java,e\a\eacc35c9ce53df31e00f121a152d4a3ef2b1390f
-t
-Dsrc/main/java/jeronimafloriano/com/github/domain/entity/Produto.java,0\0\00b36e08cf4b16aa49c6bf93a7e551b6c0bb542e
