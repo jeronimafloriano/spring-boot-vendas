@@ -2,12 +2,14 @@ package jeronimafloriano.com.github.domain.repository;
 
 import jeronimafloriano.com.github.domain.entity.Cliente;
 import jeronimafloriano.com.github.domain.entity.Pedido;
+import jeronimafloriano.com.github.exception.RegraDeNegocioException;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Integer> {
 
@@ -35,5 +37,11 @@ public interface ClienteRepository extends JpaRepository<Cliente, Integer> {
 
     @Query(" select c from Cliente c left join fetch c.pedidos where c.id = :id ")
     Cliente findClienteFetchPedidos(@Param("id") Integer id);
+
+    default Cliente findByIdOrElseThrow(Integer id){
+        Cliente cliente = findById(id).orElseThrow(() ->
+                new RegraDeNegocioException("Cliente não encontrado ou código inválido"));
+        return cliente;
+    }
 
 }

@@ -22,6 +22,8 @@ public class VendasApplication {
         return args -> {
             Cliente cliente1 = new Cliente("Jeronima");
             Cliente cliente2 = new Cliente("Maria");
+            cliente1.setCpf("21996548000");
+            cliente2.setCpf("47654007000");
             clienteRepository.save(cliente1);
             clienteRepository.save(cliente2);
 
