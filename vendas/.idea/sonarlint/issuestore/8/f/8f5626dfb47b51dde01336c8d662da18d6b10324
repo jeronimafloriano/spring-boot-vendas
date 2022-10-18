@@ -1,0 +1,18 @@
+
+L
+java:S3740["/Provide the parametrized type for this generic.(“¢Éì8¶”¿½0
+j
+java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(«‹ÿõøÿÿÿÿ8Ã”¿½0
+]	java:S125'"<This block of commented-out lines of code should be removed.(È£ÄŞøÿÿÿÿ8Ç”¿½0
+b
+java:S46847"@Replace this persistent entity with a simple POJO or DTO object.(ùâ¦»ùÿÿÿÿ8È”¿½0
+K
+java:S2201B"/The return value of "orElseThrow" must be used.(®ù¨F8É”¿½0
+b
+java:S4684I"@Replace this persistent entity with a simple POJO or DTO object.(ËØÌâûÿÿÿÿ8Ê”¿½0
+Q
+java:S2201Q"/The return value of "orElseThrow" must be used.(öş¦Ïøÿÿÿÿ8Ë”¿½0
+]
+java:S4684U"@Replace this persistent entity with a simple POJO or DTO object.(ÏõÖÂ8Ì”¿½0
+f
+java:S1128	"DRemove this unused import 'org.springframework.http.ResponseEntity'.(¶¯ø¦úÿÿÿÿ8Î”¿½0

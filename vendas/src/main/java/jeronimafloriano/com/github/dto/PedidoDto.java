@@ -1,5 +1,6 @@
 package jeronimafloriano.com.github.dto;
 
+import jeronimafloriano.com.github.validation.NotEmptyList;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,11 +14,12 @@ import java.util.List;
 @AllArgsConstructor
 public class PedidoDto {
 
-    @NotNull(message = "Informe o código do cliente.")
+    @NotNull(message = "{campo.codigo-cliente.obrigatorio}")
     private Integer cliente;
 
-    @NotNull(message = "É obrigatório informar o valor total do pedido.")
+    @NotNull(message = "{campo.total-pedido.obrigatorio}")
     private BigDecimal total;
 
+    @NotEmptyList(message = "{campo.itens-pedido.obrigatorio}", testeAnnotation = "teste")
     private List<ItemPedidoDto> itens;
 }
