@@ -35,15 +35,6 @@ public class ClienteController {
                         new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente não encontrado."));
     }
 
-//    @GetMapping(value = "/{id}")
-//    public ResponseEntity<Cliente> findClienteById(@PathVariable Integer id) {
-//        Optional<Cliente> cliente = clienteRepository.findById(id);
-//
-//        if (cliente.isPresent()) {
-//            return ResponseEntity.ok(cliente.get());
-//        }
-//            return ResponseEntity.notFound().build();
-//    }
 
     @GetMapping("/findAll")
     public List<Cliente> findAll(){

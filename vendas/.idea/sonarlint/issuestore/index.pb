@@ -23,8 +23,6 @@ Hsrc/main/java/jeronimafloriano/com/github/domain/enums/StatusPedido.java,9\2\9
 Psrc/main/java/jeronimafloriano/com/github/exception/RegraDeNegocioException.java,4\2\42aa0f72622ca51ac8338805e5074ad4d5823fd7
 ‚
 Rsrc/main/java/jeronimafloriano/com/github/domain/repository/ClienteRepository.java,9\4\94b1d8d3247945a0d2162dbd003943ba59a35b8f
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 …
 Usrc/main/java/jeronimafloriano/com/github/exception/PedidoNaoEncontradoException.java,0\7\07a3eb88497635f6f02ad2e4319b3bfec0e72c27
 s
@@ -41,7 +39,11 @@ t
 Dsrc/main/java/jeronimafloriano/com/github/domain/entity/Cliente.java,1\0\10deb07eb72b784e7ca474aca6c62cf770642b0b
 {
 Ksrc/main/java/jeronimafloriano/com/github/controller/ProdutoController.java,2\6\261139fa722d24689a4a2c600308341ee50791e8
-{
-Ksrc/main/java/jeronimafloriano/com/github/controller/ClienteController.java,8\f\8f5626dfb47b51dde01336c8d662da18d6b10324
 t
 Dsrc/main/java/jeronimafloriano/com/github/domain/entity/Produto.java,0\0\00b36e08cf4b16aa49c6bf93a7e551b6c0bb542e
+}
+Msrc/main/java/jeronimafloriano/com/github/dto/AtualizacaoStatusPedidoDto.java,b\d\bdfe2a3229664429536c4f396e6ffee172c50f71
+
+Osrc/main/java/jeronimafloriano/com/github/validation/NotEmptyListValidator.java,c\c\ccaf74c2d2b123accd6c3deeaa23b67906a84f1c
+p
+@src/main/java/jeronimafloriano/com/github/dto/ItemPedidoDto.java,3\d\3df279a5c87b1ef249351f11cfeebc65b7ab91b1
