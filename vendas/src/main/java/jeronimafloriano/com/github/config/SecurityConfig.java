@@ -1,6 +1,9 @@
 package jeronimafloriano.com.github.config;
 
+import jeronimafloriano.com.github.service.UserServiceImp;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -11,18 +14,30 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    @Autowired
+    UserServiceImp userServiceImp;
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()//define que a autenticação será em memória
-                .passwordEncoder(encoderPassword())//define qual será o encoder
-                .withUser("jeje")  //usuário que estamos criando
-                .password(encoderPassword().encode("12345")) //codificação de senha aleatória que estamos criando
-                .roles("USER"); //define a autorização, o perfil do usuário
+        auth
+                .userDetailsService(userServiceImp)
+                .passwordEncoder(encoderPassword());
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        super.configure(http);
+        http
+                .csrf().disable()
+                        .authorizeRequests()
+                            .antMatchers("/api/clientes/**", "/api/pedidos/***")
+                                .hasAnyRole("USER", "ADMIN")
+                            .antMatchers("/api/produtos/**")
+                                .hasRole("ADMIN")
+                            .antMatchers(HttpMethod.POST,"/api/usuarios/**")
+                                .permitAll()
+                            .anyRequest().authenticated()
+                .and()
+                    .httpBasic();
     }
 
     @Bean
