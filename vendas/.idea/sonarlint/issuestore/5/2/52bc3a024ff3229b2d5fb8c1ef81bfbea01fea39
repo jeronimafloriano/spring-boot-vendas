@@ -1,0 +1,8 @@
+
+S
+java:S2130"8Use "Long.parseLong" for this string-to-long conversion.(ş²¹ÿÿÿÿÿ
+X
+java:S1117"=Rename "expiracao" which hides the field declared at line 21.(³“ĞÑşÿÿÿÿ
+N	java:S106G"9Replace this use of System.out or System.err by a logger.(ñšÔ
+Z	java:S106I"9Replace this use of System.out or System.err by a logger.(Üµ‹€ÿÿÿÿÿ8ÁÖ‹Á0
+Z	java:S106J"9Replace this use of System.out or System.err by a logger.(…”Ïúÿÿÿÿ8ÆŸ‹Á0
