@@ -1,5 +1,9 @@
 package jeronimafloriano.com.github.controller;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import jeronimafloriano.com.github.domain.entity.Cliente;
 import jeronimafloriano.com.github.domain.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +19,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/clientes")
+@ApiOperation("Obter detalhes de um cliente")
 public class ClienteController {
 
     @Autowired
@@ -28,7 +33,13 @@ public class ClienteController {
 
 
     @GetMapping(value = "/{id}")
-    public Cliente findClienteById(@PathVariable Integer id) {
+    @ApiOperation("Obter detalhes de um cliente")
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "Cliente encontrado"),
+            @ApiResponse(code = 404, message = "Cliente não encontrado para o ID informado")
+
+    })
+    public Cliente findClienteById(@PathVariable @ApiParam("Id do Cliente") Integer id) {
         return clienteRepository
                 .findById(id)
                 .orElseThrow( () ->
