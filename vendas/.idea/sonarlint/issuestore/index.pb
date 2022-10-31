@@ -73,13 +73,3 @@ t
 Dsrc/main/java/jeronimafloriano/com/github/domain/entity/Usuario.java,5\b\5b0c496e30e17c6a62733a0f2c9fbe9c18754660
 {
 Ksrc/main/java/jeronimafloriano/com/github/controller/UsuarioController.java,4\f\4ffedd5279b6248d21f2dfa1ed3778250720bb76
-s
-Csrc/main/java/jeronimafloriano/com/github/config/SwaggerConfig.java,d\e\de713ee8415e2e820ca34df3cdf399a2cfa9e646
-t
-Dsrc/main/java/jeronimafloriano/com/github/config/SecurityConfig.java,b\0\b01b330c360f184ca7c2bde1e3a2c7b817ee1999
-{
-Ksrc/main/java/jeronimafloriano/com/github/controller/ClienteController.java,8\f\8f5626dfb47b51dde01336c8d662da18d6b10324
-p
-@src/main/java/jeronimafloriano/com/github/VendasApplication.java,6\e\6e5494756a750050a14c3b3106f0320e8193183e
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
