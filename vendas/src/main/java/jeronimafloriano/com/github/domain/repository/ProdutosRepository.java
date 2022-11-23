@@ -4,7 +4,9 @@ import jeronimafloriano.com.github.domain.entity.Cliente;
 import jeronimafloriano.com.github.domain.entity.Produto;
 import jeronimafloriano.com.github.exception.RegraDeNegocioException;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface ProdutosRepository extends JpaRepository<Produto, Integer> {
 
     default Produto findByIdOrElseThrow(Integer id){

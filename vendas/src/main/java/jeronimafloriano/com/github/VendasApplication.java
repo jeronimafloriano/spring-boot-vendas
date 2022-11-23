@@ -18,7 +18,7 @@ import java.util.List;
 @SpringBootApplication
 public class VendasApplication extends SpringBootServletInitializer {
 
-    @Bean
+    /*@Bean
     public CommandLineRunner init(@Autowired ClienteRepository clienteRepository, PedidosRepository pedidosRepository){
         return args -> {
             Cliente cliente1 = new Cliente("Jeronima");
@@ -28,7 +28,7 @@ public class VendasApplication extends SpringBootServletInitializer {
             clienteRepository.save(cliente1);
             clienteRepository.save(cliente2);
 
-            /*clienteRepository.findAll().forEach(System.out::println);
+            clienteRepository.findAll().forEach(System.out::println);
             System.out.println("Procurando por nome com consulta da JPA: " + clienteRepository.findByNomeLike("Maria"));
             System.out.println(clienteRepository.existsByNome("Jeronima"));
 
@@ -47,9 +47,9 @@ public class VendasApplication extends SpringBootServletInitializer {
             System.out.println("Buscando clientes com fetch: " + cliente);
             System.out.println(cliente.getPedidos());
 
-            pedidosRepository.findByClienteId(cliente1.getId()).forEach(System.out::println);*/
+            pedidosRepository.findByClienteId(cliente1.getId()).forEach(System.out::println);
         };
-    }
+    }*/
     public static void main(String[] args) {
         SpringApplication.run(VendasApplication.class, args);
     }

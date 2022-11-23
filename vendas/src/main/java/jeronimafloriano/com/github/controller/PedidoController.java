@@ -30,7 +30,7 @@ public class PedidoController {
     @Autowired
     private PedidosRepository pedidosRepository;
 
-    @PostMapping("/salvar")
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Integer save (@RequestBody @Valid PedidoDto pedidoDto){
         Pedido pedido = service.save(pedidoDto);

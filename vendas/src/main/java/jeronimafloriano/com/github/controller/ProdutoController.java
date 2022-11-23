@@ -1,6 +1,5 @@
 package jeronimafloriano.com.github.controller;
 
-import jeronimafloriano.com.github.domain.entity.Cliente;
 import jeronimafloriano.com.github.domain.entity.Produto;
 import jeronimafloriano.com.github.domain.repository.ProdutosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +17,11 @@ import java.util.List;
 public class ProdutoController {
 
     @Autowired
-    private ProdutosRepository produtos;
+    private ProdutosRepository produtosRepository;
 
     @GetMapping("/{id}")
     public Produto getById(@PathVariable Integer id){
-        return produtos
+        return produtosRepository
                 .findById(id)
                 .orElseThrow( () ->
                         new ResponseStatusException(HttpStatus.NOT_FOUND, "Produto não encontrado"));
@@ -30,22 +29,22 @@ public class ProdutoController {
 
     @GetMapping("/findAll")
     public List<Produto> findAll(){
-        return produtos.findAll();
+        return produtosRepository.findAll();
     }
 
     @PostMapping("/salvar")
     @ResponseStatus(HttpStatus.CREATED)
     public Produto salvar(@RequestBody @Valid Produto produto){
-        return produtos.save(produto);
+        return produtosRepository.save(produto);
     }
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void atualizar(@PathVariable Integer id, @RequestBody @Valid Produto produto){
-        produtos.findById(id)
+        produtosRepository.findById(id)
                 .map(produtoEncontrado -> {
                     produto.setId(produtoEncontrado.getId());
-                    produtos.save(produto);
+                    produtosRepository.save(produto);
                     return produto;
                 }).orElseThrow(() ->
                         new ResponseStatusException(HttpStatus.NOT_FOUND, "Produto não encontrado"));
@@ -54,9 +53,9 @@ public class ProdutoController {
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deletar(@PathVariable Integer id){
-        produtos.findById(id)
+        produtosRepository.findById(id)
                 .map(produto -> {
-                    produtos.delete(produto);
+                    produtosRepository.delete(produto);
                     return produto;
                 }).orElseThrow(() ->
                         new ResponseStatusException(HttpStatus.NOT_FOUND));
@@ -69,7 +68,7 @@ public class ProdutoController {
                 .withIgnoreCase()
                 .withStringMatcher(ExampleMatcher.StringMatcher.CONTAINING);
         Example example = Example.of(filtro, matcher);
-        return produtos.findAll(example);
+        return produtosRepository.findAll(example);
     }
 
 }
